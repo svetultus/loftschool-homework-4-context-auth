@@ -15,11 +15,15 @@ class AuthProvider extends PureComponent {
     this.logout = this.logout.bind(this);
     this.getProviderValue = this.getProviderValue.bind(this);
   }
-  //static contextType = MyContext;
 
   getProviderValue() {
-    // let value = this.context.value;
-    // return this.context.value;
+    return {
+      isAuthorized: this.state.isAuthorized,
+      authorize: this.authorize,
+      logout: this.logout,
+      authorizeError: this.state.authorizeError,
+      email: this.state.email
+    };
   }
 
   authorize(email, password) {
@@ -39,7 +43,7 @@ class AuthProvider extends PureComponent {
 
   render() {
     const { children } = this.props;
-    //this.getProviderValue();
+    this.getProviderValue();
 
     return (
       <Provider

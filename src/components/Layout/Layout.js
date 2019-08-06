@@ -13,14 +13,15 @@ class Layout extends PureComponent {
   }
 
   render() {
+    const { header, footer, children } = this.props;
     return (
       <React.Fragment>
-        {this.props.header}
+        {header}
         <main className={this.classLayout}>
           <SectionTitle className="main__title">Main</SectionTitle>
-          {this.props.children}
+          {children}
         </main>
-        {this.props.footer}
+        {footer}
       </React.Fragment>
     );
   }
