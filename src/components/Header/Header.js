@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { AuthConsumer } from '../../contexts/Auth';
 import './Header.css';
 import SectionTitle from '../SectionTitle';
+import '../Button';
+import Button from '../Button';
 
 class Header extends PureComponent {
   constructor(props) {
@@ -27,13 +29,20 @@ class Header extends PureComponent {
                   <p className="header-menu__email header-email t-header-email">
                     {email}
                   </p>
-                  <button
+                  <Button
                     id="btn-logout"
                     className="header-menu__button t-logout button"
                     onClick={logout}
                   >
                     Выйти
-                  </button>
+                  </Button>
+                  {/* <button
+                    id="btn-logout"
+                    className="header-menu__button t-logout button"
+                    onClick={logout}
+                  >
+                    
+                  </button> */}
                 </div>
               </div>
             </header>
